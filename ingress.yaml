@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: test-ingress
+  namespace: naveen
+spec:
+  backend:
+    serviceName: my-service
+    servicePort: 80
+  rules:
+  - host: app.navrama-kube-mas-1.coe-cloud.cloud
+    http:
+      paths:
+      - backend:
+          serviceName: my-service
+          servicePort: 80
+
