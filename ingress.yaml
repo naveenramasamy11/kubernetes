@@ -8,7 +8,7 @@ spec:
     serviceName: my-service
     servicePort: 80
   rules:
-  - host: app.navrama-kube-mas-1.coe-cloud.cloud
+  - host: app.navrama-kube-mas-1.example.com
     http:
       paths:
       - backend:
