@@ -1,17 +1,17 @@
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: test-ingress
-  namespace: naveen
+  name: nginx-ingress
 spec:
-  backend:
-    serviceName: my-service
-    servicePort: 80
   rules:
-  - host: app.navrama-kube-mas-1.example.com
+  - host: nginx.app.example.com
     http:
       paths:
-      - backend:
-          serviceName: my-service
-          servicePort: 80
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: nginx-svc
+            port:
+              number: 80
 
